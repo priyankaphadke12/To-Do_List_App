@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="heading">To-Do List App</h1>
+        <div class="inputs">
+            <input type="text" class="input" placeholder="Enter Your Task" id="inp">
+            <button onclick="Add()" class="button">Add</button>
+        </div>
+        <div class="text">
+
+        </div>
+    </div>
+
+    <script>
+        let inputs = document.getElementById("inp");
+        let text = document.querySelector(".text");
+
+        function Add() 
+        {
+            if (inputs.value == "") 
+            {
+                alert("Please Enter Task")
+            } else 
+            {
+                let newEle = document.createElement("ul");
+                newEle.innerHTML = `${inputs.value} <i class="fa-solid fa-trash"></i>`;
+                text.appendChild(newEle);
+                inputs.value = "";
+
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>
